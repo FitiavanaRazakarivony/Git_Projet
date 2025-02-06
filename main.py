@@ -19,7 +19,8 @@ def create_app():
     jwt.init_app(app)
 
     # Enregistrement des blueprints
-    from .routes import register_blueprints
+    # Utilisation de l'importation absolue
+    from routes import register_blueprints  # Correction de l'importation
     register_blueprints(app)
 
     # Créer la base de données
