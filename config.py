@@ -62,3 +62,5 @@ finally:
         cursor.close()
         db.close()
         print("🔌 Connexion fermée")
+
+
