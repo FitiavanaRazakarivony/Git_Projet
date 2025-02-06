@@ -1,7 +1,6 @@
 import os
-from transformers import pipeline
-from gtts import gTTS
-from langdetect import detect
+from threading import Lock
+
 from deepface import DeepFace
 from werkzeug.utils import secure_filename
 from langdetect import detect
@@ -10,7 +9,7 @@ import threading
 
 
 engine = pyttsx3.init()
-lock = threading.Lock()  # Verrou pour empêcher plusieurs threads d'appeler runAndWait()
+lock: Lock = threading.Lock()  # Verrou pour empêcher plusieurs threads d'appeler runAndWait()
 
 # Comparaison des images avec vérifications des chemins
 
